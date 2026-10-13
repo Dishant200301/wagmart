@@ -15,6 +15,7 @@ import { SearchModal } from './components/SearchModal';
 import { QuickViewModal } from './components/QuickViewModal';
 import { ReelModal } from './components/ReelModal';
 import { BlogSection } from './components/BlogSection';
+import { PetCategoryBanner } from './components/PetCategoryBanner';
 
 import { products } from './data/products';
 import type { Product, CartItem, ReelItem, BundleItem, CategoryItem } from './types';
@@ -135,6 +136,15 @@ export function App() {
     scrollToShop();
   };
 
+  const handleSelectPet = (petType: 'dog' | 'cat') => {
+    if (petType === 'dog') {
+      setSelectedCategory('collars');
+    } else {
+      setSelectedCategory('feeding');
+    }
+    scrollToShop();
+  };
+
   const totalCartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
@@ -156,6 +166,7 @@ export function App() {
         {/* 3. Shop by Category (Better Together) */}
         <Categories onSelectCategory={handleSelectCategory} />
 
+       
         {/* 4. Best Sellers / Featured Products */}
         <BestSellers
           products={products}
@@ -172,8 +183,10 @@ export function App() {
 
         {/* 5. Shop by Need / Bundles */}
         <ShopByNeed onSelectBundle={handleSelectBundle} />
+        {/* 3.5 Shop By Pet: FOR DOG & FOR CAT Banner */}
+        <PetCategoryBanner onSelectPet={handleSelectPet} />
 
-       {/* 11. Wagmart Premium Pet Trust & Brand Credibility Section (Editorial Case-Study Grid) */}
+        {/* 11. Wagmart Premium Pet Trust & Brand Credibility Section (Editorial Case-Study Grid) */}
         <PetTrustSection />
 
         {/* 7. Pet Reels / Stories */}
