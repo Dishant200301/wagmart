@@ -5,7 +5,6 @@ import { PetTrustSection } from './components/PetTrustSection';
 import { Categories } from './components/Categories';
 import { BestSellers } from './components/BestSellers';
 import { ShopByNeed } from './components/ShopByNeed';
-import { WhyChooseWagmart } from './components/WhyChooseWagmart';
 import { PetReels } from './components/PetReels';
 import { Testimonials } from './components/Testimonials';
 import { FAQAccordion } from './components/FAQAccordion';
@@ -16,10 +15,8 @@ import { SearchModal } from './components/SearchModal';
 import { QuickViewModal } from './components/QuickViewModal';
 import { ReelModal } from './components/ReelModal';
 import { BlogSection } from './components/BlogSection';
-import { BlogModal } from './components/BlogModal';
 
 import { products } from './data/products';
-import type { BlogPost } from './data/blogs';
 import type { Product, CartItem, ReelItem, BundleItem, CategoryItem } from './types';
 
 export function App() {
@@ -40,7 +37,6 @@ export function App() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
   const [activeReel, setActiveReel] = useState<ReelItem | null>(null);
-  const [activeBlogPost, setActiveBlogPost] = useState<BlogPost | null>(null);
   const [activeSection, setActiveSection] = useState('hero');
 
   // Scroll spy to highlight active nav link
@@ -187,7 +183,7 @@ export function App() {
         <Testimonials />
 
         {/* 9. Pet Blog & Care Guides */}
-        <BlogSection onSelectPost={(post) => setActiveBlogPost(post)} />
+        <BlogSection />
 
         {/* 10. FAQ Accordion */}
         <FAQAccordion />
@@ -240,12 +236,6 @@ export function App() {
         onClose={() => setActiveReel(null)}
         onShopClick={scrollToShop}
       />
-
-      {/* BlogModal hidden / commented out per user request */}
-      {/* <BlogModal
-        post={activeBlogPost}
-        onClose={() => setActiveBlogPost(null)}
-      /> */}
     </div>
   );
 }

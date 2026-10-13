@@ -29,13 +29,6 @@ export const PetTrustSection: React.FC<PetTrustSectionProps> = ({ className = ''
     }
   };
 
-  const brandValues = [
-    { label: 'Thoughtful Selection', glyph: '✜' },
-    { label: 'Everyday Pet Care', glyph: '◈' },
-    { label: 'Pet-Parent Focus', glyph: '◉' },
-    { label: 'Wagmart Quality', glyph: '✦' },
-  ];
-
   return (
     <section
       id="about"
@@ -176,27 +169,6 @@ export const PetTrustSection: React.FC<PetTrustSectionProps> = ({ className = ''
             </div>
 
           </div>
-
-          {/* =========================================================================
-              3. BOTTOM BRAND LOGO / VALUES STRIP
-             ========================================================================= */}
-          {/* <div className="border-t border-[#EAECEF] bg-white py-4 sm:py-4.5 px-6 sm:px-10">
-            <div className="flex items-center justify-around sm:justify-between flex-wrap gap-4 sm:gap-6">
-              {brandValues.map((val, idx) => (
-                <div
-                  key={idx}
-                  className="flex items-center gap-2 text-[#6B7280] hover:text-[#171717] transition-colors duration-200"
-                >
-                  <span className="text-[10px] text-[#5B3CC4] select-none" aria-hidden="true">
-                    {val.glyph}
-                  </span>
-                  <span className="font-nunito font-medium text-xs sm:text-[13px] tracking-wide uppercase whitespace-nowrap">
-                    {val.label}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div> */}
 
         </div>
 

@@ -1,15 +1,11 @@
 import React from 'react';
 import { BookOpen } from 'lucide-react';
-import { blogs, BlogPost } from '../data/blogs';
+import { blogs } from '../data/blogs';
 import { ThemeButton } from './ThemeButton';
 import { SectionBadge } from './SectionBadge';
 import { PetBlogCard } from './PetBlogCard';
 
-interface BlogSectionProps {
-  onSelectPost?: (post: BlogPost) => void;
-}
-
-export const BlogSection: React.FC<BlogSectionProps> = ({ onSelectPost: _onSelectPost }) => {
+export const BlogSection: React.FC = () => {
   return (
     <section
       id="blog"
@@ -43,8 +39,6 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onSelectPost: _onSelec
           {/* Quick Filter or CTA Action */}
           <div className="shrink-0 flex items-center gap-3">
             <ThemeButton
-              /* Quick details modal click action commented out per request */
-              /* onClick={() => onSelectPost?.(blogs[0])} */
               size="md"
               icon={<BookOpen className="w-4 h-4 stroke-[2.2]" />}
             >
@@ -65,8 +59,6 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onSelectPost: _onSelec
               description={blog.excerpt}
               publicationDate={blog.date}
               readingTime={blog.readTime}
-              /* Quick blog details modal click action commented out / hidden per request */
-              /* onClick={() => onSelectPost?.(blog)} */
             />
           ))}
         </div>

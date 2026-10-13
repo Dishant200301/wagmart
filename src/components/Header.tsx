@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Heart, ShoppingBag, Menu, X, Search, Phone } from 'lucide-react';
-import { AnnouncementBar } from './AnnouncementBar';
 
 interface HeaderProps {
   cartCount: number;
@@ -20,18 +19,6 @@ export const Header: React.FC<HeaderProps> = ({
   activeSection,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isAtTop, setIsAtTop] = useState(true);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      // Hide announcement bar when scrolled down, reappear when at the top (< 10px) across all devices
-      setIsAtTop(window.scrollY < 10);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const navLinks = [
     { label: 'about', href: '#about', id: 'about' },
@@ -42,8 +29,6 @@ export const Header: React.FC<HeaderProps> = ({
 
   return (
     <header className="sticky top-0 z-40 w-full transition-all">
-      {/* Top Announcement Bar (Infinite marquee ticker with smooth scroll collapse) */}
-      {/* <AnnouncementBa r isAtTop={isAtTop} /> */}
 
       {/* 
         =========================================================================

@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Trash2, Plus, Minus, ShoppingBag, ArrowRight, AlertCircle } from 'lucide-react';
+import { X, Trash2, Plus, Minus, ShoppingBag, AlertCircle } from 'lucide-react';
 import { CartItem } from '../types';
 import { ThemeButton } from './ThemeButton';
 
